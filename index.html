@@ -7,11 +7,76 @@
     <title>My Website</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-	<script src="index.js"></script>
-  </body>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-indigo-700 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Branding or Logo (you can replace this with your logo) -->
+            <a href="#" class="text-white text-lg font-bold">Your Website</a>
+
+            <!-- Navbar Links (responsive toggle) -->
+            <div class="lg:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Navbar Links (hidden by default on small screens) -->
+            <div class="hidden lg:flex space-x-4">
+                <a href="#" class="text-white">Publications</a>
+                <a href="#" class="text-white">Talks</a>
+                <a href="#" class="text-white">Teaching</a>
+                <a href="#" class="text-white">Portfolio</a>
+                <a href="#" class="text-white">Blog Posts</a>
+                <a href="#" class="text-white">CV</a>
+                <a href="#" class="text-white">Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="bg-indigo-800 text-white p-4 w-64">
+            <!-- Avatar -->
+            <div class="flex items-center mb-4">
+                <div class="w-16 h-16 rounded-full overflow-hidden">
+                    <img src="images/profile.png" alt="Your Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="ml-4">
+                    <p class="font-bold text-xl">Micheal Wong</p>
+                    <p class="text-gray-300">GIS Analyst | Surveyor</p>
+                </div>
+            </div>
+
+            <!-- Portfolio Links -->
+            <div>
+                <p class="text-gray-300 text-sm mb-2">Portfolio Links</p>
+                <ul>
+                    <li><a href="#" class="block text-white hover:text-gray-400">Project 1</a></li>
+                    <li><a href="#" class="block text-white hover:text-gray-400">Project 2</a></li>
+                    <li><a href="#" class="block text-white hover:text-gray-400">Project 3</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Your page content goes here -->
+        <div class="flex-grow p-8">
+            <!-- Your main content goes here -->
+        </div>
+    </div>
+
+    <!-- Responsive Navbar Toggle Script -->
+    <script>
+        document.getElementById('navbar-toggle').addEventListener('click', function () {
+            document.querySelector('.lg\\:flex').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
 </html>
